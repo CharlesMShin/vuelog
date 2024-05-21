@@ -1,22 +1,20 @@
 <template>
- 
-  <div onclick="alert('123')" class="row row-cols-1 row-cols-md-3 g-4 list">
+  <div class="row row-cols-1 row-cols-md-4 g-4 list">
     <div class="col" v-for="(data, i) in datas" :key="i">
       <div class="card h-100">
         <img :src="data.imgeSrc" alt="..." />
         <div class="card-body">
-          <router-link to="/detail">
-          <h5 class="card-title">{{ data.title }}</h5>
+          <router-link class="link" :to="`/detail/${data.number}`">
+            <h5 class="card-title">{{ data.title }}</h5>
           </router-link>
-          <p class="card-text">{{ data.content }}</p>
+          <p class="card-text"><small class="text-body-secondary">{{ data.content }}</small></p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer text-center">
           <small class="text-body-secondary">{{ data.date }}</small>
         </div>
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -29,11 +27,17 @@ export default {
 </script>
 
 <style>
-.list {
-  margin-right:auto;
-  margin-left : 1%;
-  margin-top : 0px;
-  margin-bottom : 1%;
+#img {
+  height: 100%;
 }
-
+.list {
+  margin-right: auto;
+  margin-left: 1%;
+  margin-top: 0px;
+  margin-bottom: 1%;
+}
+.link {
+   text-decoration: none; /* 링크의 밑줄 제거 */  
+   color: inherit; /* 링크의 색상 제거 */
+}
 </style>
