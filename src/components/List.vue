@@ -2,7 +2,7 @@
   <div class="row row-cols-1 row-cols-md-4 g-4 list">
     <div class="col" v-for="(data, i) in datas" :key="i">
       <div class="card h-100">
-        <img :src="data.imgeSrc" alt="..." />
+        <img @click="$router.push('/detail/' + data.number)" :src="data.imgeSrc" alt="..." />
         <div class="card-body">
           <router-link class="link" :to="`/detail/${data.number}`">
             <h5 class="card-title">{{ data.title }}</h5>

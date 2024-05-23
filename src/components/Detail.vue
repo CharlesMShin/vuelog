@@ -1,4 +1,6 @@
 <template>
+  <!-- 12312
+  <router-view></router-view> -->
   <div class="card detail">
     <div class="card-body" style="border-bottom: 1px solid #d2d2d2">
       <h5 class="card-title" style="font-weight: bold;">{{ datas[$route.params.id].title }}</h5>
